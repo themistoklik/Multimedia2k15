@@ -24,6 +24,7 @@ and push to the remote
     git push origin master
 
 ### Step 5:
-repeat Step 1
+delete the local branch
 
+    git branch -d whatevername
 [Trello board]: https://trello.com/b/uDflfIHI/multimedia-homework
