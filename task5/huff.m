@@ -4,6 +4,7 @@ function b = huff(q, s)
 N = length(q); %number of characters to encode
 b = cell(size(q));
 for i = 1:N,
+    %simply assign the right symbol
     b{i} = s{q(i)};
 end
 return

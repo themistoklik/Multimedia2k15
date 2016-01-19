@@ -26,14 +26,17 @@ function s = huffLUT(p)
         %nodes = [nodes(1:end) {newnode}];
 
         i=1;
+        %insert new node at right place, so we don't have to sort each time we join nodes
         while nodes{i}.freq < newnode.freq,
             if i >= length(nodes),
                 break
             end
             i = i+1;
         end
+        %actual insertion
         nodes = [nodes(1:i) {newnode} nodes(i+1:end)];
     end
+
     
     Tree.left = nodes{1};
     Tree.right = nodes{2};
@@ -45,8 +48,11 @@ function s = huffLUT(p)
 
 end
 
+%Function to perform the assignment of codes to the produced huffman Tree.
+%returns s, which is essentialy the LUT of this huffman implementation, as it's the array of symbols.
 function s = assignCodes(Tree, s)
-
+%start with the convention that right gets '1' and left '0'
+%check if this node isn't a leaf and assign codes
     if ~Tree.leaf,
         Tree.left.code = [Tree.code '0']; % childcode = parentcode + 0 or 1
         Tree.right.code = [Tree.code '1'];
