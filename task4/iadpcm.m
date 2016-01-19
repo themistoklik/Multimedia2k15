@@ -6,7 +6,7 @@ N = length(rq);
 [~, wL] = quantLevels(n, wmin, wmax);
 w = arrayfun(@(sample) iQuant(sample, wL), wq);
 r = arrayfun(@(sample) iQuant(sample, L), rq);
-
+t
 %% Reverse the dpcm process
 xd = zeros(size(r));
 xd(1:m) = r(1:m); %first samples are not decorrelated
