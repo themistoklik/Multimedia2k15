@@ -5,8 +5,6 @@
 function w = lpcoeffs(x, m)
 N = length(x);
 
-
-
 d = [0; x(1:end-1)]; %desired signal: delayed by 1
 
 %input too small? return
