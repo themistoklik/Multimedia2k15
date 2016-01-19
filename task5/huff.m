@@ -7,4 +7,5 @@ for i = 1:N,
     %simply assign the right symbol
     b{i} = s{q(i)};
 end
+b = [b{:}]; %new
 return
